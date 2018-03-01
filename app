@@ -77,6 +77,6 @@ for line in (open('C:/1.log', 'r')):
                 phoneCount[str(xmlparserPhoneAbonents(t_phoneAbonent))] = 1
 
 for strPhone in phoneCount:
-    print(str(strPhone)+' ; '+ phoneCount[strPhone])
+    print(str(strPhone)+' ; '+ str(phoneCount[strPhone]))
 
 f.close()
