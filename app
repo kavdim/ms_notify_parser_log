@@ -67,15 +67,16 @@ for line in (open('C:/1.log', 'r')):
         if xmlparserAbonents(t_Abonent) != None:
             t_Abonent = xmlparserAbonents(t_Abonent)
 
-        #print(t_Date[0]+';'+t_Date[1]+';'+t_Object+';'+t_Abonent+';'+s[2])
+        print(t_Date[0]+';'+t_Date[1]+';'+t_Object+';'+t_Abonent+';'+s[2])
         #f.write(t_Date[0]+';'+t_Date[1]+';'+t_Object+';'+t_Abonent+';'+s[2]+'\n')
 
-        if xmlparserPhoneAbonents(t_phoneAbonent) in phoneCount:
-            phoneCount[xmlparserPhoneAbonents(t_phoneAbonent)] = phoneCount[xmlparserPhoneAbonents(t_phoneAbonent)] + 1
-        else:
-            phoneCount[str(xmlparserPhoneAbonents(t_phoneAbonent))] = 1
+        if xmlparserPhoneAbonents(t_phoneAbonent) != None:
+            if xmlparserPhoneAbonents(t_phoneAbonent) in phoneCount:
+                phoneCount[xmlparserPhoneAbonents(t_phoneAbonent)] = phoneCount[xmlparserPhoneAbonents(t_phoneAbonent)] + 1
+            else:
+                phoneCount[str(xmlparserPhoneAbonents(t_phoneAbonent))] = 1
 
-    for strPhone in phoneCount:
-        print(str(strPhone)+' ; '+ str(phoneCount[strPhone]))
+for strPhone in phoneCount:
+    print(str(strPhone)+' ; '+ phoneCount[strPhone])
 
 f.close()
